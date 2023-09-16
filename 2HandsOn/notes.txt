@@ -1,0 +1,29 @@
+How to create a php website
+- Install apache2 and php (and mysql)
+- go to /var/www/html
+- Change the index.html file
+
+
+package.json describes the application
+
+
+{
+	"name": "app",
+	"version": 
+	"main": "index.js",
+	"license": "MIT"
+	"dependecies": {
+		"express"
+	}	
+}
+
+Dockerfile example:
+
+FROM node
+WORKDIR /usr/local/app
+COPY package.json ./
+RUN yarn install
+COPY src ./src
+CMD node src/index.ks
+
+
